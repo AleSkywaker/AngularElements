@@ -9,6 +9,13 @@ import { AppComponent } from './app.component';
   declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  // bootstrap: [AppComponent]
+  entryComponents: []
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private injector: Injector) {
+    const el = createCustomElement(AppComponent, { injector });
+    customElements.define('my-button', el);
+  }
+  ngDoBootstrap() {}
+}
