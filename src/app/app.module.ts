@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
 export class AppModule {
   constructor(private injector: Injector) {
     const el = createCustomElement(AppComponent, { injector });
-    customElements.define('my-button', el);
+    customElements.define('my-page', el);
   }
   ngDoBootstrap() {}
 }
